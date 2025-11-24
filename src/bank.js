@@ -7,23 +7,23 @@ class BankAccount {
   }
 
   deposit(amount) {
-    this.balance += amount;
+    this.#balance += amount;
     console.log(`Deposited $${amount}. New balance: $${this.balance}`);
-    return this.balance;
+    return this.#balance;
   }
 
   withdraw(amount) {
-    if (amount > this.balance) {
+    if (amount > this.#balance) {
       console.log(`Withdrawal failed. Insufficient funds.`);
     } else {
-      this.balance -= amount;
+      this.#balance -= amount;
       console.log(`Withdrew $${amount}. New balance: $${this.balance}`);
     }
     return this.balance;
   }
 
   getBalance() {
-    return #balance;
+    return this.#balance;
   }
 
   static getTotalNumberOfAccounts() {
@@ -44,7 +44,7 @@ class Bank {
   getTotalBalance() {
     let total = 0;
     this.accounts.forEach((account) => {
-      total += account.balance;
+      total += account.getbalance;
     });
     return total;
   }
