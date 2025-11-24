@@ -17,8 +17,29 @@ In your own words, explain what does _encapsulation_ refer to? Why is this conce
 
 Provide a code snippet to illustrate _encapsulation_.
 
-## Response 2
+## Response 1
+Encapsulation in object-oriented programming means bundling data and the methods that work on that data into a single object, while also controlling who can access or change that data.
+It protects important information from being changed accidentally and makes code easier to maintain, understand, and reuse.
+Encapsulation is beneficial because it:
+keeps data safe from unintended changes
+reduces bugs by controlling access
+makes objects easier to understand and work with
+helps organize code into clear, manageable parts
 
+```js
+const counter = {
+  value: 0
+  increase(){
+    this.value += 1;
+  }
+  decrease(){
+    this.value -= 1;
+  }
+  show() {
+    console.log(`current value: ${this.value}` );
+    }
+
+}
 ---
 
 ## Question 2
@@ -51,16 +72,22 @@ console.log(counterB.count);
 ```
 
 ## Response 2
+The `this` keyword refers to the current object that is using a method. It is useful because it lets methods access or change the object’s own data, so the same method can work for different objects without rewriting it 
 
+
+In this code, `this` refers to the specific object calling the method. For example, when `counterA.increment()` runs, this is `counterA`; when `counterB.` `increment()` runs, this is `counterB`. This lets each Counter instance keep its own separate count.
 ---
 
 ## Question 3
 
 In your own words, explain what **polymorphism** means in OOP. Provide an example in code that demonstrates polymorphism.
 
+
+
+
 ## Response 3
 
----
+polymorphism means “many forms.” In OOP, it allows different objects to use the same method name but behave differently depending on the object. This makes code more flexible and reusable because the same interface can work with multiple object types
 
 ## Question 4
 
