@@ -89,6 +89,25 @@ In your own words, explain what **polymorphism** means in OOP. Provide an exampl
 
 polymorphism means “many forms.” In OOP, it allows different objects to use the same method name but behave differently depending on the object. This makes code more flexible and reusable because the same interface can work with multiple object types
 
+```js
+class animal{
+  speak() {
+    consol.log ("the animal make sound" )
+
+  }
+}
+class dog extends animal {
+  speak () {
+    console.log ("the dog barks");
+  
+  }
+}
+class cat extends animal {
+  speak() {
+    console.log ("the cat meow")
+  }
+}
+
 ## Question 4
 
 You're building a game where players can raise different digital pets: Cats, Dogs, and Birds. All pets have have a `name`, `energy` level, and `happiness` level and can all `sleep`. Cats have the ability to `hunt`, dogs have the ability to `chase`, and birds have the ability to `fly`.
@@ -98,3 +117,13 @@ You're building a game where players can raise different digital pets: Cats, Dog
 **Part B:** Explain one advantage of using inheritance here instead of creating three completely separate classes.
 
 ## Response 4
+Part A: First of all, I will create a base `class` called Pet using `inheritance`. On this `base class`, I will add the properties of name, energy, happiness, and the ability to `sleep`. So, the share `function` only has to be written once; I don't have to repeat it over and over, and it will make it more organized. 
+
+Then I will use a `subclass` for each individual pet; these pets will `inherit` the common characteristics from the pet `superclass`, cat, dog, and bird. Because it will `inherit` the common character will then add the unique abilities to each `subclass` behavior, like `hunt()` for cats, `chase()` for dogs, and `fly()` for birds. This structure allows the program to treat all pets in a general way when working with shared behaviors (like sleep), `while` still allowing each `type of` pet to have its own specialized behavior
+Part B:
+
+
+
+//1. Reduces code duplication
+// 2. Makes updates easier
+// 3. Keeps the code organized

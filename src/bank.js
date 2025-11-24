@@ -17,9 +17,9 @@ class BankAccount {
       console.log(`Withdrawal failed. Insufficient funds.`);
     } else {
       this.#balance -= amount;
-      console.log(`Withdrew $${amount}. New balance: $${this.balance}`);
+      console.log(`Withdrew $${amount}. New balance: $${this.getBalancebalance}`);
     }
-    return this.balance;
+    return this.#balance;
   }
 
   getBalance() {
@@ -50,7 +50,7 @@ class Bank {
   }
 
   findAccount(accountNumber) {
-    return accounts.find((account) => account.accountNumber = accountNumber);
+    return accounts.find((account) => account.accountNumber === accountNumber);
   }
 }
 
