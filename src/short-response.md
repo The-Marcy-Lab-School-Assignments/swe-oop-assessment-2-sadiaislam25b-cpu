@@ -17,8 +17,29 @@ In your own words, explain what does _encapsulation_ refer to? Why is this conce
 
 Provide a code snippet to illustrate _encapsulation_.
 
-## Response 2
+## Response 1
+Encapsulation in object-oriented programming means bundling data and the methods that work on that data into a single object, while also controlling who can access or change that data.
+It protects important information from being changed accidentally and makes code easier to maintain, understand, and reuse.
+Encapsulation is beneficial because it:
+keeps data safe from unintended changes
+reduces bugs by controlling access
+makes objects easier to understand and work with
+helps organize code into clear, manageable parts
 
+```js
+const counter = {
+  value: 0
+  increase(){
+    this.value += 1;
+  }
+  decrease(){
+    this.value -= 1;
+  }
+  show() {
+    console.log(`current value: ${this.value}` );
+    }
+
+}
 ---
 
 ## Question 2
@@ -51,16 +72,41 @@ console.log(counterB.count);
 ```
 
 ## Response 2
+The `this` keyword refers to the current object that is using a method. It is useful because it lets methods access or change the object’s own data, so the same method can work for different objects without rewriting it 
 
+
+In this code, `this` refers to the specific object calling the method. For example, when `counterA.increment()` runs, this is `counterA`; when `counterB.` `increment()` runs, this is `counterB`. This lets each Counter instance keep its own separate count.
 ---
 
 ## Question 3
 
 In your own words, explain what **polymorphism** means in OOP. Provide an example in code that demonstrates polymorphism.
 
+
+
+
 ## Response 3
 
----
+polymorphism means “many forms.” In OOP, it allows different objects to use the same method name but behave differently depending on the object. This makes code more flexible and reusable because the same interface can work with multiple object types
+
+```js
+class animal{
+  speak() {
+    consol.log ("the animal make sound" )
+
+  }
+}
+class dog extends animal {
+  speak () {
+    console.log ("the dog barks");
+  
+  }
+}
+class cat extends animal {
+  speak() {
+    console.log ("the cat meow")
+  }
+}
 
 ## Question 4
 
@@ -71,3 +117,13 @@ You're building a game where players can raise different digital pets: Cats, Dog
 **Part B:** Explain one advantage of using inheritance here instead of creating three completely separate classes.
 
 ## Response 4
+Part A: First of all, I will create a base `class` called Pet using `inheritance`. On this `base class`, I will add the properties of name, energy, happiness, and the ability to `sleep`. So, the share `function` only has to be written once; I don't have to repeat it over and over, and it will make it more organized. 
+
+Then I will use a `subclass` for each individual pet; these pets will `inherit` the common characteristics from the pet `superclass`, cat, dog, and bird. Because it will `inherit` the common character will then add the unique abilities to each `subclass` behavior, like `hunt()` for cats, `chase()` for dogs, and `fly()` for birds. This structure allows the program to treat all pets in a general way when working with shared behaviors (like sleep), `while` still allowing each `type of` pet to have its own specialized behavior
+Part B:
+
+
+
+//1. Reduces code duplication
+// 2. Makes updates easier
+// 3. Keeps the code organized
